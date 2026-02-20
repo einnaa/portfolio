@@ -1,48 +1,49 @@
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export default function NavBar() {
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [isLocked, setIsLocked] = useState(false);
+  const location = useLocation();
 
-  useEffect(() => {
-    const controlNavbar = () => {
-      if (isLocked) return;
+  const slowScrollTo = (targetY, duration) => {
+    const startY = window.pageYOffset;
+    const diff = targetY - startY;
+    let start = null;
+
+    const step = (timestamp) => {
+      if (!start) start = timestamp;
+      const time = timestamp - start;
+      const percent = Math.min(time / duration, 1);
       
-      const currentScrollY = window.scrollY;
-      
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down
-        setIsVisible(false);
-      } else {
-        // Scrolling up
-        setIsVisible(true);
+      // Easing function: easeInOutCubic
+      const ease = percent < 0.5 
+        ? 4 * percent * percent * percent 
+        : 1 - Math.pow(-2 * percent + 2, 3) / 2;
+
+      window.scrollTo(0, startY + diff * ease);
+
+      if (time < duration) {
+        window.requestAnimationFrame(step);
       }
-      
-      setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener("scroll", controlNavbar);
-    return () => window.removeEventListener("scroll", controlNavbar);
-  }, [lastScrollY, isLocked]);
+    window.requestAnimationFrame(step);
+  };
 
-  const handleNavClick = () => {
-    setIsLocked(true);
-    setIsVisible(true);
-    // Unlock after smooth scroll completes (approx 1s)
-    setTimeout(() => {
-      setIsLocked(false);
-    }, 1000);
+  const handleScroll = (e, id) => {
+    if (location.pathname === "/") {
+      e.preventDefault();
+      const element = document.getElementById(id);
+      if (element) {
+        // Set offset to 0 because we want the section padding to serve as the visual gap.
+        // If the navbar is ~80px and the section has pt-32 (128px), the remaining gap is a perfect 48px.
+        const targetY = element.getBoundingClientRect().top + window.pageYOffset;
+        slowScrollTo(targetY, 1200);
+      }
+    }
   };
 
   return (
-    <div className="fixed top-3 md:top-10 left-1/2 -translate-x-1/2 w-[94%] md:w-[92%] max-w-6xl z-50 pointer-events-none">
-      <nav className={`w-full px-4 md:px-8 py-3 md:py-4 flex justify-between items-center rounded-full bg-white/40 backdrop-blur-xl border border-black/5 shadow-2xl shadow-black/5 pointer-events-auto transition-all duration-700 cubic-bezier(0.4, 0, 0.2, 1) ${
-        isVisible 
-          ? "translate-y-0 opacity-100" 
-          : "-translate-y-24 opacity-0"
-      }`}>
+    <nav className="fixed top-0 left-0 w-full z-100 bg-white/80 backdrop-blur-xl border-b border-black/5">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 py-4 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2 md:gap-3 group">
           <div className="w-6 h-6 md:w-8 md:h-8 bg-black rounded-sm smooth-transition group-hover:scale-95" />
           <span className="text-base md:text-md font-sans font-bold text-black tracking-tighter whitespace-nowrap">
@@ -51,19 +52,45 @@ export default function NavBar() {
         </Link>
         
         <div className="flex items-center gap-4 md:gap-8">
-          <div className="hidden md:flex items-center gap-8 text-sm font-sans font-semibold text-black underline-offset-8 underline decoration-black/20 hover:decoration-black">
-            <a href="#projects" onClick={handleNavClick} className="smooth-transition">Projects</a>
-            <a href="#about" onClick={handleNavClick} className="smooth-transition">About Me</a>
+          <div className="hidden md:flex items-center gap-8 text-sm font-sans font-semibold text-black lowercase tracking-widest">
+            <a 
+              href="#projects" 
+              onClick={(e) => handleScroll(e, "projects")}
+              className="hover:text-zinc-500 smooth-transition border-b border-transparent hover:border-black/20 pb-1"
+            >
+              projects
+            </a>
+            <a 
+              href="#about" 
+              onClick={(e) => handleScroll(e, "about")}
+              className="hover:text-zinc-500 smooth-transition border-b border-transparent hover:border-black/20 pb-1"
+            >
+              about me
+            </a>
+            <a 
+              href="#certificates" 
+              onClick={(e) => handleScroll(e, "certificates")}
+              className="hover:text-zinc-500 smooth-transition border-b border-transparent hover:border-black/20 pb-1"
+            >
+              certifications
+            </a>
+            <a 
+              href="#contact" 
+              onClick={(e) => handleScroll(e, "contact")}
+              className="hover:text-zinc-500 smooth-transition border-b border-transparent hover:border-black/20 pb-1"
+            >
+              contact
+            </a>
           </div>
           
           <a 
-            href="mailto:einna.com"
-            className="px-4 md:px-6 py-1.5 md:py-2 bg-black text-white font-sans font-bold rounded-full hover:bg-zinc-800 smooth-transition shadow-sm text-xs md:text-sm"
+            href="mailto:einnacadagat@gmail.com"
+            className="px-6 py-2 bg-black text-white font-sans font-bold rounded-sm hover:bg-zinc-800 smooth-transition shadow-sm text-xs md:text-sm"
           >
             Email
           </a>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 }

@@ -4,8 +4,8 @@ export const projects = [
     title: "eSaysay Platform",
     description: "A language learning system for OFWs.",
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop",
-    github: "https://github.com/einna/esaysay",
-    tech: ["React", "Express", "PostgreSQL", "Tailwind"],
+    github: "https://github.com/m0rPleX-16/eSaysay",
+    tech: ["HTML", "CSS", "JavaScript", "C#"],
   },
   {
     id: 2,

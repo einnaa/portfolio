@@ -28,9 +28,9 @@ export default function AboutMe() {
         {/* Skills Header Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 md:mb-24">
           {skillCategories.map((cat) => (
-            <div key={cat.title} className="text-center md:text-left">
-              <h3 className="font-sans font-bold text-vintage-brown mb-4 text-sm md:text-base uppercase tracking-wider">{cat.title}</h3>
-              <ul className="space-y-1">
+            <div key={cat.title} className="">
+              <h3 className="font-sans font-bold text-vintage-brown mb-4 text-sm md:text-base uppercase tracking-wider text-left">{cat.title}</h3>
+              <ul className="space-y-1 text-right">
                 {cat.skills.map((skill) => (
                   <li key={skill} className="text-vintage-brown/70 font-sans text-xs md:text-sm tracking-tight leading-snug">
                     {skill}
@@ -57,11 +57,9 @@ export default function AboutMe() {
               <h4 className="text-lg md:text-xl font-sans font-bold text-vintage-brown uppercase tracking-widest">einna joy cadagat</h4>
             </div>
 
-            <div className="space-y-6 text-vintage-brown font-sans text-base md:text-lg leading-relaxed max-w-2xl mx-auto tracking-tight">
+            <div className="space-y-6 text-vintage-brown font-sans text-xs md:text-sm leading-relaxed max-w-2xl mx-auto tracking-tight">
               <p>
-                hi! i'm einna, currently a BSIT student with a passion for involving myself in tech ideas.
-              </p>
-              <p>
+                hi! i'm einna, currently a BSIT student with a passion for involving myself in tech ideas. <br />
                 my love for art evolved into creating tech design and with my understanding and years of experience reading hundreds of novels also writing about tech.
               </p>
             </div>

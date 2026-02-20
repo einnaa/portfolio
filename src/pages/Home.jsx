@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Hero from "../sections/hero";
 import Projects from "../sections/projects";
 import AboutMe from "../sections/about-me";
+import Certificates from "../sections/certificates";
 import Contact from "../sections/contact";
 import NavBar from "../components/nav-bar";
 
@@ -37,6 +38,9 @@ export default function Home() {
       </div>
       <div className="reveal">
         <AboutMe />
+      </div>
+      <div className="reveal">
+        <Certificates />
       </div>
       <div className="reveal">
         <Contact />
