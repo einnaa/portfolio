@@ -24,6 +24,8 @@ export default {
       animation: {
         'fade-in': 'fadeIn 1s ease-out forwards',
         'subtle-zoom': 'subtleZoom 20s infinite alternate',
+        'float': 'float 6s ease-in-out infinite',
+        'spin-slow': 'spin 12s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -33,6 +35,10 @@ export default {
         subtleZoom: {
           '0%': { transform: 'scale(1)' },
           '100%': { transform: 'scale(1.05)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
         }
       }
     },

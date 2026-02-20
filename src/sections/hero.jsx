@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6 py-24 md:py-32">
       <div className="absolute inset-0 bg-linear-to-br from-vintage-orange/5 to-vintage-bg z-0" />
       
-      <div className="z-10 w-full max-w-xs md:max-w-lg mx-auto mb-8 md:mb-12 animate-fade-in">
+      <div className="z-10 w-full max-w-xs md:max-w-lg md:top-10 mx-auto animate-fade-in">
         <div className="w-full overflow-hidden">
           <img 
             src={heroDesign} 
@@ -17,11 +17,15 @@ export default function Hero() {
       </div>
 
       <div className="max-w-4xl text-center z-10 animate-fade-in">
-        <h1 className="text-lg sm:text-lg md:text-8xl text-vintage-brown mb-6 tracking-tight leading-tight font-cursive">
+        <h1 className="text-lg sm:text-lg md:text-8xl text-vintage-black font-cursive">
           Hi, this is Einna!
         </h1>
-        <p className="text-lg md:text-2xl font-sans text-vintage-brown/80 mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
-          Full-stack developer and UI designer blending minimalist modern aesthetics with the warmth of classic design.
+
+        <p className="text-lg md:text-2xl font-sans font-bold text-vintage-black mb-1 md:mb-2 max-w-2xl mx-auto leading-relaxed">
+          I build and support user-focused digital projects.
+        </p>
+        <p className="text-xs md:text-sm font-sans text-vintage-black mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
+          UI/UX Design · Front-end Development · Technical Writing · Project Coordination
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
           <a
