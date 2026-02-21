@@ -5,6 +5,7 @@ import AboutMe from "../sections/about-me";
 import Certificates from "../sections/certificates";
 import Contact from "../sections/contact";
 import NavBar from "../components/nav-bar";
+import SocialLinks from "../components/social-links";
 
 // Asset list for preloading
 const ASSETS = [
@@ -132,21 +133,16 @@ export default function Home() {
   }
 
   return (
-    <div className="relative page-fade-in bg-vintage-bg">
+    <div className="min-h-screen bg-vintage-bg">
       <NavBar />
-      <Hero />
-      <div className="reveal">
+      <SocialLinks />
+      <main>
+        <Hero />
         <Projects />
-      </div>
-      <div className="reveal">
         <AboutMe />
-      </div>
-      <div className="reveal">
         <Certificates />
-      </div>
-      <div className="reveal">
         <Contact />
-      </div>
+      </main>
     </div>
   );
 }

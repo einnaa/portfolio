@@ -1,8 +1,8 @@
 export default function Contact() {
   return (
-    <section id="contact" className="py-16 md:py-52 px-6 md:px-4 bg-vintage-brown text-white">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl text-vintage-bg/70 md:text-5xl font-cursive mb-6 md:mb-8">let's turn your ideas into something real,</h2>
+    <section id="contact" className="min-h-screen flex flex-col py-16 md:py-14 px-6 md:px-4 bg-vintage-brown text-white">
+      <div className="max-w-4xl mx-auto text-center grow flex flex-col justify-center">
+        <h2 className="text-3xl text-white/80 md:text-5xl font-cursive mb-6 md:mb-8">let's turn your ideas into something real,</h2>
      
 
         <div className="flex flex-col items-center space-y-6 md:space-y-8">
@@ -12,9 +12,8 @@ export default function Contact() {
           >
             email me
           </a>
-          
-          <div className="flex flex-wrap justify-center gap-6 md:gap-8 pt-4 md:pt-8 opacity-60">
-            {["GitHub", "LinkedIn", "Twitter"].map((social) => (
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8 pt-2 md:pt-4 opacity-60">
+            {["GitHub", "LinkedIn", "Instagram", "Facebook"].map((social) => (
               <a 
                 key={social} 
                 href="#" 
@@ -27,8 +26,8 @@ export default function Contact() {
         </div>
       </div>
 
-      <footer className="mt-24 pt-8 border-t border-vintage-bg/10 text-center text-xs tracking-widest uppercase opacity-40 font-sans">
-        &copy; 2026 EINNA — BUILT WITH CARE
+      <footer className="mt-auto pt-8 border-t border-vintage-bg/10 text-center text-xs tracking-widest uppercase opacity-40 font-sans">
+        &copy; 2026 ~ EINNA JOY CADAGAT
       </footer>
     </section>
   );
