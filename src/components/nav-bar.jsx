@@ -43,8 +43,8 @@ export default function NavBar() {
   };
 
   return (
-    <nav className="sticky top-0 left-0 w-full z-50 mix-blend-difference pointer-events-none">
-      <div className="w-full px-6 md:px-12 py-2 flex justify-between items-center text-white pointer-events-auto">
+    <nav className="fixed top-0 left-0 w-full z-50 mix-blend-difference pointer-events-none">
+      <div className="w-full px-6 md:px-12 py-6 md:py-8 flex justify-between items-center text-white pointer-events-auto">
         <Link to="/" className="flex items-center gap-2 md:gap-3 group">
           <img src={ribbon} alt="" className="w-5 md:w-6 h-auto transition-all duration-700 group-hover:scale-110 invert" />
           <span className="text-base md:text-md font-sans font-bold whitespace-nowrap lowercase tracking-widest group-hover:text-white/80 smooth-transition">
@@ -88,7 +88,7 @@ export default function NavBar() {
             href="mailto:einnacadagat@gmail.com"
             className="px-8 py-3 bg-white text-black font-sans font-bold rounded-3xl hover:bg-white/90 smooth-transition shadow-sm text-xs md:text-sm uppercase tracking-tighter"
           >
-            connect
+            email
           </a>
         </div>
       </div>
