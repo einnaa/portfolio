@@ -1,9 +1,15 @@
 import { useParams, Link } from "react-router-dom";
+import { useEffect } from "react";
 import { projects } from "../data/projects";
 
 export default function ProjectDetails() {
   const { id } = useParams();
   const project = projects.find((p) => p.id === parseInt(id));
+
+  // Scroll to top when project changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
   if (!project) return (
     <div className="min-h-screen bg-vintage-bg flex items-center justify-center font-serif text-3xl text-vintage-brown">

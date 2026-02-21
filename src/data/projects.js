@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 1,
     title: "eSaysay Platform",
-    description: "A language learning system for OFWs designed to bridge communication gaps.",
+    description: "A language learning system for OFWs designed to bridge communication gaps. A language learning system for OFWs designed to bridge communication gaps.A language learning system for OFWs designed to bridge communication gaps.A language learning system for OFWs designed to bridge communication gaps.",
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop",
