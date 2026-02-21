@@ -1,16 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-vintage-bg: #ffffff;
-  --color-vintage-cream: #f9f9f9;
-  --color-vintage-brown: #000000;
-  --color-vintage-orange: #333333;
-  --color-vintage-sage: #666666;
-  --color-vintage-rose: #999999;
-  --color-vintage-sand: #eeeeee;
-  --color-vintage-black: #000000;
+  --color-vintage-bg: #FFF6E8;
+  --color-vintage-cream: #CBBBA0;
+  --color-vintage-brown: #2A1E1B;
+  --color-vintage-accent: #7A2E2E;
+  --color-vintage-black: #2A1E1B;
 
-  --font-serif: "Playfair Display", serif;
+  --font-serif: "Times New Roman", serif;
   --font-sans: "Poppins", sans-serif;
   --font-cursive: "Cedarville Cursive", cursive;
 
@@ -49,6 +46,13 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
   body {
     background-color: var(--color-vintage-bg);
     color: var(--color-vintage-brown);
@@ -57,7 +61,7 @@
 
   h1, h2, h3, h4 {
     font-family: var(--font-serif);
-    color: var(--color-vintage-black);
+    color: var(--color-vintage-brown);
   }
 }
 
@@ -67,13 +71,50 @@
   transition-duration: 500ms;
 }
 
+/* Smooth Page Entry Animation */
+.page-fade-in {
+  animation: pageFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease-out;
+  transform: translateY(30px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Aesthetic Loader */
+.loader-container {
+  background-color: var(--color-vintage-bg);
+}
+
+.loader-text {
+  animation: pulseText 2s ease-in-out infinite;
+}
+
+@keyframes pulseText {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.loader-line {
+  height: 1px;
+  background: var(--color-vintage-black);
+  animation: expandLine 1.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  transform-origin: left;
+}
+
+@keyframes expandLine {
+  from { scale: 0 1; }
+  to { scale: 1 1; }
 }
