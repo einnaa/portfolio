@@ -67,8 +67,11 @@ export default function Certificates() {
 		>
 			<div className="max-w-6xl mx-auto">
 				<header className="mb-16 md:mb-24 text-center">
-					<h2 className="text-3xl md:text-5xl font-serif text-vintage-brown tracking-tighter mb-2 italic leading-tight">Accolades & Achievements</h2>
-					<div className="font-cursive text-xl md:text-3xl text-vintage-accent">my certifications</div>
+					<div>
+						<div className="pb-4 font-sans text-md md:text-2xl font-bold uppercase text-vintage-brown">Certificates</div>
+						<h2 className="text-md md:text-5xl font-cursive italic text-vintage-brown">Accolades & Achievements</h2>
+						
+					</div>
 				</header>
 
 				<div className="relative group/carousel">
