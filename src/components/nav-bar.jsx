@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import ribbon from "../assets/ribbon.png";
 
 export default function NavBar() {
   const location = useLocation();
@@ -45,6 +46,7 @@ export default function NavBar() {
     <nav className="sticky top-0 left-0 w-full z-100 bg-vintage-bg/5 backdrop-blur-xl border-b border-vintage-brown/5">
       <div className="max-w-6xl mx-auto px-6 md:px-12 py-4 flex justify-between items-center text-vintage-brown">
         <Link to="#/" className="flex items-center gap-2 md:gap-3 group">
+          <img src={ribbon} alt="" className="w-5 md:w-6 h-auto grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110" />
           <span className="text-base md:text-md font-sans font-bold text-vintage-brown whitespace-nowrap lowercase tracking-widest group-hover:text-vintage-accent smooth-transition">
             einna joy
           </span>
