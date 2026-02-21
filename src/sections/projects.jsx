@@ -20,30 +20,33 @@ export default function Projects() {
             <Link 
               key={project.id} 
               to={`/projects/${project.id}`}
-              className={`group block transition-transform duration-500 ease-out hover:scale-[1.02] ${
+              className={`group block transition-transform duration-700 ease-out hover:scale-[1.01] ${
                 index % 2 === 0 ? "md:-rotate-1" : "md:rotate-1"
               } hover:rotate-0`}
             >
-              <div className="bg-white p-4 md:p-6 rounded-4xl shadow-xl shadow-vintage-brown/5 border border-vintage-brown/5 h-full flex flex-col grain-overlay">
-                <div className="relative aspect-square overflow-hidden bg-vintage-sand/20 rounded-2xl mb-6">
+              <div className="bg-white/40 backdrop-blur-md p-6 md:p-8 rounded-[2.5rem] shadow-2xl shadow-vintage-brown/5 border border-vintage-cream/20 h-full flex flex-col grain-overlay overflow-hidden">
+                <div className="relative aspect-4/3 overflow-hidden rounded-2xl mb-8 border border-vintage-brown/5">
                   <div 
-                    className="w-full h-full bg-cover bg-center smooth-transition group-hover:scale-110"
+                    className="w-full h-full bg-cover bg-center grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-110"
                     style={{ backgroundImage: `url(${project.image})` }}
                   />
-                  <div className="absolute inset-0 bg-vintage-brown/0 group-hover:bg-vintage-brown/10 smooth-transition" />
+                  <div className="absolute inset-0 bg-vintage-brown/10 opacity-0 group-hover:opacity-100 smooth-transition" />
                 </div>
                 
-                <h3 className="text-xl md:text-2xl font-serif text-vintage-brown group-hover:text-vintage-orange smooth-transition mb-2">
-                  {project.title}
-                </h3>
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-2xl md:text-3xl font-serif text-vintage-brown leading-tight">
+                    {project.title}
+                  </h3>
+                  <span className="text-[10px] font-bold text-vintage-accent uppercase tracking-[0.3em] pt-2">{project.category}</span>
+                </div>
                 
-                <p className="text-vintage-brown/70 font-sans tracking-tight mb-4 grow italic text-sm">
+                <p className="text-vintage-brown/60 font-serif italic tracking-tight mb-8 grow text-sm md:text-base leading-relaxed">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-vintage-sand/10">
+                <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-vintage-brown/10">
                   {project.tech?.map((t) => (
-                    <span key={t} className="px-3 py-1 bg-vintage-sand/20 text-vintage-brown/60 rounded-full text-[10px] uppercase tracking-widest font-bold">
+                    <span key={t} className="px-3 py-1 bg-vintage-brown/5 text-vintage-brown/40 rounded-full text-[9px] uppercase tracking-widest font-bold border border-vintage-brown/5 group-hover:bg-vintage-brown/10 group-hover:text-vintage-brown/60 transition-colors duration-300">
                       {t}
                     </span>
                   ))}

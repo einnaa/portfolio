@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useEffect } from "react";
 
 const certificates = [
 	{
@@ -40,52 +40,77 @@ const certificates = [
 
 export default function Certificates() {
 	const [currentIndex, setCurrentIndex] = useState(0);
-	const containerRef = useRef(null);
+	const [isMobile, setIsMobile] = useState(false);
+	const [isPaused, setIsPaused] = useState(false);
+
+	useEffect(() => {
+		const checkMobile = () => setIsMobile(window.innerWidth < 768);
+		checkMobile();
+		window.addEventListener('resize', checkMobile);
+		return () => window.removeEventListener('resize', checkMobile);
+	}, []);
+
+	const itemsToShow = isMobile ? 1 : 2;
+	const maxIndex = certificates.length - itemsToShow;
 
 	const next = () => {
-		setCurrentIndex((prev) => (prev + 1) % certificates.length);
+		setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
 	};
 
 	const prev = () => {
-		setCurrentIndex((prev) => (prev - 1 + certificates.length) % certificates.length);
+		setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
 	};
 
+	useEffect(() => {
+		if (isPaused) return;
+		const interval = setInterval(next, 5000);
+		return () => clearInterval(interval);
+	}, [isPaused, currentIndex, maxIndex]);
+
 	return (
-		<section id="certificates" className="py-24 md:py-32 px-6 bg-white overflow-hidden scroll-mt-24">
+		<section 
+			id="certificates" 
+			className="py-24 md:py-32 px-6 bg-vintage-bg overflow-hidden scroll-mt-24"
+			onMouseEnter={() => setIsPaused(true)}
+			onMouseLeave={() => setIsPaused(false)}
+		>
 			<div className="max-w-6xl mx-auto">
 				<header className="mb-16 md:mb-24 text-center">
-					<h2 className="text-3xl md:text-4xl font-cursive text-black italic mb-2">accolades & achievements</h2>
-					<p className="text-black/60 font-sans italic text-sm md:text-base uppercase tracking-widest">Selected Certifications</p>
+					<h2 className="text-3xl md:text-5xl font-serif text-vintage-brown tracking-tighter mb-4 italic leading-tight">Accolades & Achievements</h2>
+					<div className="font-cursive text-xl md:text-3xl text-vintage-accent -rotate-2">selected certifications</div>
 				</header>
 
-				<div className="relative group">
-					{/* Main Carousel View - Switched to Transform for better browser support */}
+				<div className="relative group/carousel">
+					{/* Main Carousel View */}
 					<div className="overflow-hidden">
 						<div
-							className="flex smooth-transition duration-700 ease-in-out"
-							style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+							className="flex transition-transform duration-1000 cubic-bezier(0.16, 1, 0.3, 1) will-change-transform"
+							style={{ transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)` }}
 						>
 							{certificates.map((cert) => (
 								<div
 									key={cert.id}
-									className="w-full shrink-0 flex flex-col items-center px-4"
+									style={{ width: `${100 / itemsToShow}%` }}
+									className="shrink-0 flex flex-col items-center px-4"
 								>
-									<div className="w-full max-w-2xl aspect-16/10 bg-zinc-50 border border-black/5 rounded-sm overflow-hidden shadow-sm relative group/item">
+									<div className="w-full relative aspect-4/3 bg-white/40 backdrop-blur-sm border border-vintage-cream/20 rounded-xl overflow-hidden shadow-2xl shadow-vintage-brown/5 group/item">
 										<img
 											src={cert.image}
 											alt={cert.title}
 											decoding="async"
 											loading="lazy"
-											className="w-full h-full object-cover grayscale group-hover:item:grayscale-0 transition-[filter] duration-700 ease-in-out transform-gpu"
+											className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover/item:grayscale-0 group-hover/item:scale-105"
 										/>
-										<div className="absolute inset-0 bg-black/5 opacity-0 group-hover:item:opacity-100 smooth-transition pointer-events-none" />
+										<div className="absolute inset-0 bg-vintage-brown/10 opacity-0 group-hover/item:opacity-100 smooth-transition pointer-events-none" />
 									</div>
 
-									<div className="mt-8 text-center max-w-md">
-										<p className="text-[10px] md:text-xs font-sans font-bold text-black/40 uppercase tracking-[0.3em] mb-2">
-											{cert.issuer} • {cert.date}
-										</p>
-										<h3 className="text-xl md:text-2xl font-serif text-black">{cert.title}</h3>
+									<div className="mt-8 text-center max-w-md px-4">
+										<div className="flex items-center justify-center gap-3 mb-3">
+											<span className="text-[10px] font-bold text-vintage-accent uppercase tracking-[0.3em]">{cert.date}</span>
+											<div className="w-8 h-px bg-vintage-brown/10" />
+											<span className="text-[10px] font-bold text-vintage-brown/40 uppercase tracking-[0.3em]">{cert.issuer}</span>
+										</div>
+										<h3 className="text-xl md:text-2xl font-serif text-vintage-brown leading-tight">{cert.title}</h3>
 									</div>
 								</div>
 							))}
@@ -95,28 +120,32 @@ export default function Certificates() {
 					{/* Navigation Controls */}
 					<button
 						onClick={prev}
-						className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 p-3 text-black/30 hover:text-black smooth-transition outline-none"
+						className="absolute top-[32%] md:top-[35%] -translate-y-1/2 -left-4 md:-left-12 text-vintage-brown/30 hover:text-vintage-accent flex items-center justify-center smooth-transition z-10"
 						aria-label="Previous Certificate"
 					>
-						<span className="text-3xl font-serif">←</span>
+						<span className="text-2xl font-serif">←</span>
 					</button>
 
 					<button
 						onClick={next}
-						className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 p-3 text-black/30 hover:text-black smooth-transition outline-none"
+						className="absolute top-[32%] md:top-[35%] -translate-y-1/2 -right-4 md:-right-12 text-vintage-brown/30 hover:text-vintage-accent flex items-center justify-center smooth-transition z-10"
 						aria-label="Next Certificate"
 					>
-						<span className="text-3xl font-serif">→</span>
+						<span className="text-2xl font-serif">→</span>
 					</button>
 				</div>
 
 				{/* Indicators */}
-				<div className="flex justify-center gap-4 mt-12 md:mt-16">
-					{certificates.map((_, i) => (
+				<div className="flex justify-center gap-3 mt-12 md:mt-20">
+					{Array.from({ length: certificates.length - itemsToShow + 1 }).map((_, i) => (
 						<button
 							key={i}
 							onClick={() => setCurrentIndex(i)}
-							className={`h-1 smooth-transition ${currentIndex === i ? "w-8 bg-black" : "w-4 bg-black/10 hover:bg-black/30"}`}
+							className={`h-1 smooth-transition transition-all duration-500 ${
+								currentIndex === i 
+									? "w-12 bg-vintage-accent" 
+									: "w-6 bg-vintage-brown/10 hover:bg-vintage-brown/30"
+							}`}
 						/>
 					))}
 				</div>
