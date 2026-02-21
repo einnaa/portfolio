@@ -26,20 +26,20 @@ export default function Projects() {
               <div className="bg-white/40 backdrop-blur-md p-6 md:p-8 rounded-[2.5rem] shadow-2xl shadow-vintage-brown/5 border border-vintage-cream/20 h-full flex flex-col grain-overlay overflow-hidden">
                 <div className="relative aspect-4/3 overflow-hidden rounded-2xl mb-8 border border-vintage-brown/5">
                   <div 
-                    className="w-full h-full bg-cover bg-center grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-110"
+                    className="w-full h-full bg-cover bg-center transition-all duration-1000 group-hover:scale-110"
                     style={{ backgroundImage: `url(${project.image})` }}
                   />
                   <div className="absolute inset-0 bg-vintage-brown/10 opacity-0 group-hover:opacity-100 smooth-transition" />
                 </div>
                 
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-2xl md:text-3xl font-serif text-vintage-brown leading-tight">
+                  <h3 className="text-2xl md:text-3xl font-sans text-vintage-brown leading-tight">
                     {project.title}
                   </h3>
                   <span className="text-[10px] font-bold text-vintage-accent uppercase tracking-[0.3em] pt-2">{project.category}</span>
                 </div>
                 
-                <p className="text-vintage-brown/60 font-serif italic tracking-tight mb-8 grow text-sm md:text-base leading-relaxed">
+                <p className="text-vintage-brown/60 font-sans italic tracking-tight mb-8 grow text-sm md:text-base leading-relaxed">
                   {project.description}
                 </p>
 
