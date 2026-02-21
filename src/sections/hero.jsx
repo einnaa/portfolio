@@ -1,6 +1,39 @@
 import { Link } from "react-router-dom";
 
 export default function Hero() {
+  const slowScrollTo = (targetY, duration) => {
+    const startY = window.pageYOffset;
+    const diff = targetY - startY;
+    let start = null;
+
+    const step = (timestamp) => {
+      if (!start) start = timestamp;
+      const time = timestamp - start;
+      const percent = Math.min(time / duration, 1);
+      
+      // Easing function: easeOutQuart
+      const ease = 1 - Math.pow(1 - percent, 4);
+
+      window.scrollTo(0, startY + diff * ease);
+
+      if (time < duration) {
+        window.requestAnimationFrame(step);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  };
+
+  const handleScroll = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 1; // Matching NavBar offset
+      const targetY = element.getBoundingClientRect().top + window.pageYOffset - offset;
+      slowScrollTo(targetY, 1200);
+    }
+  };
+
   return (
     <section id="hero" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6 py-24 md:py-32 bg-linear-to-b from-vintage-orange/6 to-vintage-bg">
       <div className="z-10 w-full max-w-xs md:max-w-lg md:top-10 mx-auto animate-fade-in">
@@ -26,15 +59,20 @@ export default function Hero() {
         </p>
       </div>
 
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer z-10 hidden md:block group">
-        <img 
-          src="/assets/down-arrow.png" 
-          alt="Scroll Down" 
-          className="w-5 h-auto opacity-30 group-hover:opacity-100 transition-opacity"
-          onClick={() => {
-            document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
-          }}
-        />
+      <div className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 z-10 animate-fade-in">
+      <a
+          href="#projects"
+          onClick={(e) => handleScroll(e, "projects")}
+          className="group flex flex-col items-center gap-3"
+        >
+        <div className="w-32 h-32 md:w-32 md:h-32 flex items-center justify-center smooth-transition">
+            <img 
+              src="/assets/down-arrow.png"
+              alt="Scroll Down" 
+              className="w-32 h-32 md:w-32 md:h-32 object-contain opacity-30 group-hover:opacity-100 animate-bounce smooth-transition"
+            />
+          </div>
+        </a>
       </div>
     </section>
   );

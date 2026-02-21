@@ -31,9 +31,10 @@ export default function NavBar() {
       e.preventDefault();
       const element = document.getElementById(id);
       if (element) {
-        // Increased duration back to a smooth but quick 600ms.
-        // The issue was a conflict with CSS scroll-behavior: smooth in some browsers.
-        const targetY = element.getBoundingClientRect().top + window.pageYOffset;
+        // Reduced vertical offset slightly (e.g., -20px) if the section still feels too low.
+        // You can change '20' to a higher number to move it even higher up.
+        const offset = 0; 
+        const targetY = element.getBoundingClientRect().top + window.pageYOffset - offset;
         slowScrollTo(targetY, 1200);
       }
     }

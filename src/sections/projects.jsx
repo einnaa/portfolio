@@ -3,7 +3,7 @@ import { projects } from "../data/projects";
 
 export default function Projects() {
   return (
-    <section id="projects"  className="py-12 md:py-20 px-6 md:px-4 scroll-mt-20 bg-vintage-bg">
+    <section id="projects"  className="pt-8 pb-12 md:pt-21 md:pb-20 px-6 md:px-4 bg-vintage-bg">
       <div className="max-w-350 mx-auto flex flex-col">
         <header className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-10 gap-4">
           <div>

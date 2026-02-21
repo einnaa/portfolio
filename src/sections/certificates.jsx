@@ -66,7 +66,7 @@ export default function Certificates() {
 			className="py-24 md:py-32 px-6 bg-vintage-bg overflow-hidden scroll-mt-24"
 		>
 			<div className="max-w-6xl mx-auto">
-				<header className="mb-16 md:mb-24 text-center">
+				<header className="mb-6 md:mb-12 text-center">
 					<div>
 						<div className="pb-4 font-sans text-md md:text-2xl font-bold uppercase text-vintage-brown">Certificates</div>
 						<h2 className="text-md md:text-5xl font-cursive italic text-vintage-brown">Accolades & Achievements</h2>
