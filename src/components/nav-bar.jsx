@@ -42,42 +42,41 @@ export default function NavBar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-100 bg-white/80 backdrop-blur-xl border-b border-black/5">
-      <div className="max-w-6xl mx-auto px-6 md:px-12 py-4 flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-2 md:gap-3 group">
-          <div className="w-6 h-6 md:w-8 md:h-8 bg-black rounded-sm smooth-transition group-hover:scale-95" />
-          <span className="text-base md:text-md font-sans font-bold text-black tracking-tighter whitespace-nowrap">
-            Einna Joy
+    <nav className="sticky top-0 left-0 w-full z-100 bg-vintage-bg/80 backdrop-blur-xl border-b border-vintage-brown/5">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 py-4 flex justify-between items-center text-vintage-brown">
+        <Link to="#/" className="flex items-center gap-2 md:gap-3 group">
+          <span className="text-base md:text-md font-sans font-bold text-vintage-brown whitespace-nowrap lowercase tracking-widest group-hover:text-vintage-accent smooth-transition">
+            einna joy
           </span>
         </Link>
         
         <div className="flex items-center gap-4 md:gap-8">
-          <div className="hidden md:flex items-center gap-8 text-sm font-sans font-semibold text-black lowercase tracking-widest">
+          <div className="hidden md:flex items-center gap-8 text-sm font-sans font-semibold text-vintage-brown lowercase tracking-widest">
             <a 
               href="#projects" 
               onClick={(e) => handleScroll(e, "projects")}
-              className="hover:text-zinc-500 smooth-transition border-b border-transparent hover:border-black/20 pb-1"
+              className="hover:text-vintage-accent smooth-transition border-b border-transparent hover:border-vintage-brown/20 pb-1"
             >
               projects
             </a>
             <a 
               href="#about" 
               onClick={(e) => handleScroll(e, "about")}
-              className="hover:text-zinc-500 smooth-transition border-b border-transparent hover:border-black/20 pb-1"
+              className="hover:text-vintage-accent smooth-transition border-b border-transparent hover:border-vintage-brown/20 pb-1"
             >
               about me
             </a>
             <a 
               href="#certificates" 
               onClick={(e) => handleScroll(e, "certificates")}
-              className="hover:text-zinc-500 smooth-transition border-b border-transparent hover:border-black/20 pb-1"
+              className="hover:text-vintage-accent smooth-transition border-b border-transparent hover:border-vintage-brown/20 pb-1"
             >
               certifications
             </a>
             <a 
               href="#contact" 
               onClick={(e) => handleScroll(e, "contact")}
-              className="hover:text-zinc-500 smooth-transition border-b border-transparent hover:border-black/20 pb-1"
+              className="hover:text-vintage-accent smooth-transition border-b border-transparent hover:border-vintage-brown/20 pb-1"
             >
               contact
             </a>
@@ -85,7 +84,7 @@ export default function NavBar() {
           
           <a 
             href="mailto:einnacadagat@gmail.com"
-            className="px-6 py-2 bg-black text-white font-sans font-bold rounded-sm hover:bg-zinc-800 smooth-transition shadow-sm text-xs md:text-sm"
+            className="px-6 py-2 bg-vintage-brown text-vintage-bg font-sans font-bold rounded-3xl hover:bg-vintage-accent smooth-transition shadow-sm text-xs md:text-sm uppercase tracking-tighter"
           >
             Email
           </a>
