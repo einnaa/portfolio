@@ -35,4 +35,13 @@ export const projects = [
     tech: ["Figma", "React", "Storybook"],
     category: "Design System"
   },
+  {
+    id: 5,
+    title: "Nova Dashboard",
+    description: "A data visualization dashboard focusing on user flow and accessibility.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2042&auto=format&fit=crop",
+    github: "#",
+    tech: ["React", "D3.js", "Tailwind"],
+    category: "Data Visualization"
+  },
 ];
