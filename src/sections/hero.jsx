@@ -28,25 +28,25 @@ export default function Hero() {
         <p className="text-xs md:text-sm font-sans text-vintage-black mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
           UI/UX Design · Front-end Development · Technical Writing · Project Coordination
         </p>
-        
-        <div className="mt-20 md:mt-20 flex justify-center">
-          <a
-            href="#projects"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="group flex flex-col items-center gap-3"
-          >
-            <div className="w-30 h-30 flex items-center justify-center smooth-transition">
-              <img 
-                src={downArrow} 
-                alt="Scroll Down" 
-                className="w-32 h-32 object-contain opacity-30 group-hover:opacity-100 animate-bounce smooth-transition"
-              />
-            </div>
-          </a>
-        </div>
+      </div>
+
+      <div className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 z-10 animate-fade-in">
+        <a
+          href="#projects"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+          }}
+          className="group flex flex-col items-center gap-3"
+        >
+          <div className="w-32 h-32 md:w-32 md:h-32 flex items-center justify-center smooth-transition">
+            <img 
+              src={downArrow} 
+              alt="Scroll Down" 
+              className="w-32 h-32 md:w-32 md:h-32 object-contain opacity-30 group-hover:opacity-100 animate-bounce smooth-transition"
+            />
+          </div>
+        </a>
       </div>
     </section>
   );
