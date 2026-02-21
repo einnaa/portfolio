@@ -88,7 +88,7 @@ export default function NavBar() {
           
           <a 
             href="mailto:einnacadagat@gmail.com"
-            className="px-8 py-3 bg-white text-black font-sans font-bold rounded-3xl hover:bg-white/90 smooth-transition shadow-sm text-xs md:text-sm uppercase tracking-tighter"
+            className="px-8 py-2 bg-white text-black font-sans font-bold rounded-3xl hover:bg-white/90 smooth-transition shadow-sm text-xs md:text-sm uppercase "
           >
             email
           </a>

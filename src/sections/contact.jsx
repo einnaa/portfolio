@@ -13,13 +13,20 @@ export default function Contact() {
             email me
           </a>
           <div className="flex flex-wrap justify-center gap-6 md:gap-8 pt-2 md:pt-4 opacity-60">
-            {["GitHub", "LinkedIn", "Instagram", "Facebook"].map((social) => (
+            {[
+              { name: "GitHub", url: "https://github.com/einnaa" },
+              { name: "LinkedIn", url: "#" }, 
+              { name: "Instagram", url: "https://www.instagram.com/eiaynna/" },
+              { name: "Facebook", url: "https://www.facebook.com/einnn.j/" }
+            ].map((social) => (
               <a 
-                key={social} 
-                href="#" 
+                key={social.name} 
+                href={social.url} 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm tracking-widest uppercase hover:text-vintage-orange smooth-transition font-sans"
               >
-                {social}
+                {social.name}
               </a>
             ))}
           </div>
