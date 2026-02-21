@@ -6,7 +6,6 @@ export default function Hero() {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6 py-24 md:py-32">
       <div className="absolute inset-0 bg-linear-to-br from-vintage-orange/5 to-vintage-bg z-0" />
-      
       <div className="z-10 w-full max-w-xs md:max-w-lg md:top-10 mx-auto animate-fade-in">
         <div className="w-full overflow-hidden">
           <img 
