@@ -43,7 +43,11 @@ export default function NavBar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 mix-blend-difference pointer-events-none">
       <div className="w-full px-6 md:px-12 py-6 md:py-8 flex justify-between items-center text-white pointer-events-auto">
-        <Link to="/" className="flex items-center gap-2 md:gap-3 group">
+        <Link 
+          to="/" 
+          onClick={(e) => handleScroll(e, "hero")}
+          className="flex items-center gap-2 md:gap-3 group"
+        >
           <img src={ribbon} alt="" className="w-5 md:w-6 h-auto transition-all duration-700 group-hover:scale-110 invert" />
           <span className="text-base md:text-md font-sans font-bold whitespace-nowrap lowercase tracking-widest group-hover:text-white/80 smooth-transition">
             einna joy

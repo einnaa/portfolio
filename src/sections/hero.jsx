@@ -4,7 +4,7 @@ import downArrow from "../assets/down-arrow.png";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6 py-24 md:py-32 bg-linear-to-b from-vintage-orange/6 to-vintage-bg">
+    <section id="hero" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6 py-24 md:py-32 bg-linear-to-b from-vintage-orange/6 to-vintage-bg">
       <div className="z-10 w-full max-w-xs md:max-w-lg md:top-10 mx-auto animate-fade-in">
         <div className="w-full overflow-hidden">
           <img 
