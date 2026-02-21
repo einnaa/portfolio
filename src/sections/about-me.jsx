@@ -26,7 +26,7 @@ export default function AboutMe() {
       <div className="max-w-6xl mx-auto relative z-10">
         
         {/* Skills Header Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 md:mb-24">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8 md:mb-16">
           {skillCategories.map((cat) => (
             <div key={cat.title} className="">
               <h3 className="font-sans font-bold text-vintage-brown mb-4 text-sm md:text-base uppercase tracking-wider text-left">{cat.title}</h3>
@@ -43,7 +43,7 @@ export default function AboutMe() {
 
         {/* Center Content */}
         <div className="flex flex-col items-center justify-center text-center max-w-3xl mx-auto">
-          <div className="w-full max-w-sm mb-8 animate-fade-in">
+          <div className="w-full max-w-lg mb-2 animate-fade-in">
             <img 
               src={aboutMeDesign} 
               alt="About Me Design" 
@@ -60,7 +60,7 @@ export default function AboutMe() {
             <div className="space-y-6 text-vintage-brown font-sans text-xs md:text-sm leading-relaxed max-w-2xl mx-auto tracking-tight">
               <p>
                 hi! i'm einna, currently a BSIT student with a passion for involving myself in tech ideas. <br />
-                my love for art evolved into creating tech design and with my understanding and years of experience reading hundreds of novels also writing about tech.
+                my love for art evolved into creating tech design. my understanding and years of experience reading hundreds of novels curated into writing about tech.
               </p>
             </div>
           </div>

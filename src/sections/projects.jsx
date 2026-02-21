@@ -20,7 +20,7 @@ export default function Projects() {
               key={project.id} 
               className="group block transition-transform duration-700 ease-out hover:scale-[1.02]"
             >
-              <div className="bg-transparent group-hover:bg-white/40 backdrop-blur-none group-hover:backdrop-blur-md p-5 md:p-6 rounded-4xl shadow-none group-hover:shadow-xl group-hover:shadow-vintage-brown/5 border border-transparent group-hover:border-vintage-accent/20 h-full flex flex-col grain-overlay overflow-hidden transition-all duration-500">
+              <div className="bg-transparent group-hover:bg-white/40 backdrop-blur-none group-hover:backdrop-blur-md p-5 md:p-6 rounded-4xl shadow-none group-hover:shadow-xl group-hover:shadow-vintage-brown/5 border border-transparent h-full flex flex-col grain-overlay overflow-hidden transition-all duration-500">
                 <Link to={`/projects/${project.id}`} className="relative aspect-3/2 overflow-hidden rounded-xl mb-6 border border-vintage-brown/5 block">
                   <div 
                     className="w-full h-full bg-cover bg-center transition-all duration-1000 group-hover:scale-110"
@@ -58,7 +58,7 @@ export default function Projects() {
               key={project.id} 
               className="group block transition-transform duration-700 ease-out hover:scale-[1.01]"
             >
-              <div className="bg-transparent group-hover:bg-white/40 backdrop-blur-none group-hover:backdrop-blur-md p-5 md:p-8 rounded-4xl shadow-none group-hover:shadow-xl group-hover:shadow-vintage-brown/5 border border-transparent group-hover:border-vintage-accent/20 h-full flex flex-col grain-overlay overflow-hidden transition-all duration-500">
+              <div className="bg-transparent group-hover:bg-white/40 backdrop-blur-none group-hover:backdrop-blur-md p-5 md:p-8 rounded-4xl shadow-none group-hover:shadow-xl group-hover:shadow-vintage-brown/5 border border-transparent h-full flex flex-col grain-overlay overflow-hidden transition-all duration-500">
                 <Link to={`/projects/${project.id}`} className="relative aspect-video overflow-hidden rounded-xl mb-6 border border-vintage-brown/5 block">
                   <div 
                     className="w-full h-full bg-cover bg-center transition-all duration-1000 group-hover:scale-105"

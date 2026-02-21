@@ -70,7 +70,6 @@ export default function Certificates() {
 					<div>
 						<div className="pb-4 font-sans text-md md:text-2xl font-bold uppercase text-vintage-brown">Certificates</div>
 						<h2 className="text-md md:text-5xl font-cursive italic text-vintage-brown">Accolades & Achievements</h2>
-						
 					</div>
 				</header>
 
@@ -87,24 +86,28 @@ export default function Certificates() {
 									style={{ width: `${100 / itemsToShow}%` }}
 									className="shrink-0 flex flex-col items-center px-4"
 								>
-									<div className="w-full relative aspect-4/3 bg-white/40 backdrop-blur-sm border border-vintage-cream/20 rounded-xl overflow-hidden shadow-2xl shadow-vintage-brown/5 group/item">
-										<img
-											src={cert.image}
-											alt={cert.title}
-											decoding="async"
-											loading="lazy"
-											className="w-full h-full object-cover transition-all duration-1000 group-hover/item:scale-105"
-										/>
-										<div className="absolute inset-0 bg-vintage-brown/10 opacity-0 group-hover/item:opacity-100 smooth-transition pointer-events-none" />
-									</div>
+									<div className="group/item relative w-full h-full p-5 md:p-6 transition-transform duration-700 ease-out hover:scale-[1.02]">
+										<div className="bg-transparent group-hover:item:bg-white/40 backdrop-blur-none group-hover:item:backdrop-blur-md p-2 rounded-4xl shadow-none group-hover:item:shadow-xl group-hover:item:shadow-vintage-brown/5 border border-transparent group-hover:item:border-vintage-accent/20 transition-all duration-500">
+											<div className="w-full relative aspect-4/3 overflow-hidden rounded-xl border border-vintage-brown/5">
+												<img
+													src={cert.image}
+													alt={cert.title}
+													decoding="async"
+													loading="lazy"
+													className="w-full h-full object-cover transition-all duration-1000 group-hover/item:scale-105"
+												/>
+												<div className="absolute inset-0 bg-vintage-brown/10 opacity-0 group-hover/item:opacity-100 smooth-transition pointer-events-none" />
+											</div>
 
-									<div className="mt-8 text-center max-w-md px-4">
-										<div className="flex items-center justify-center gap-3 mb-3">
-											<span className="text-[10px] font-bold text-vintage-accent uppercase tracking-[0.3em]">{cert.date}</span>
-											<div className="w-8 h-px bg-vintage-brown/10" />
-											<span className="text-[10px] font-bold text-vintage-brown/40 uppercase tracking-[0.3em]">{cert.issuer}</span>
+											<div className="mt-8 text-center max-w-md px-4 pb-4">
+												<div className="flex items-center justify-center gap-3 mb-3">
+													<span className="text-[10px] font-bold text-vintage-accent uppercase tracking-[0.3em]">{cert.date}</span>
+													<div className="w-8 h-px bg-vintage-brown/10" />
+													<span className="text-[10px] font-bold text-vintage-brown/40 uppercase tracking-[0.3em]">{cert.issuer}</span>
+												</div>
+												<h3 className="text-xl md:text-2xl font-serif text-vintage-brown leading-tight">{cert.title}</h3>
+											</div>
 										</div>
-										<h3 className="text-xl md:text-2xl font-serif text-vintage-brown leading-tight">{cert.title}</h3>
 									</div>
 								</div>
 							))}
@@ -135,7 +138,7 @@ export default function Certificates() {
 						<button
 							key={i}
 							onClick={() => setCurrentIndex(i)}
-							className={`h-1 smooth-transition transition-all duration-500 ${
+							className={`h-1 smooth-transition transition-all duration-500 rounded-full ${
 								currentIndex === i 
 									? "w-12 bg-vintage-accent" 
 									: "w-6 bg-vintage-brown/10 hover:bg-vintage-brown/30"
