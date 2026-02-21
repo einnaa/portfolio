@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import heroDesign from "../assets/hero-design.png";
-import downArrow from "../assets/down-arrow.png";
 
 export default function Hero() {
   return (
@@ -8,7 +6,7 @@ export default function Hero() {
       <div className="z-10 w-full max-w-xs md:max-w-lg md:top-10 mx-auto animate-fade-in">
         <div className="w-full overflow-hidden">
           <img 
-            src={heroDesign} 
+            src="/assets/hero-design.png" 
             alt="Hero Design" 
             className="w-full h-auto grayscale-20 hover:grayscale-0 smooth-transition block"
           />
@@ -28,23 +26,15 @@ export default function Hero() {
         </p>
       </div>
 
-      <div className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 z-10 animate-fade-in">
-        <a
-          href="#projects"
-          onClick={(e) => {
-            e.preventDefault();
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer z-10 hidden md:block group">
+        <img 
+          src="/assets/down-arrow.png" 
+          alt="Scroll Down" 
+          className="w-5 h-auto opacity-30 group-hover:opacity-100 transition-opacity"
+          onClick={() => {
             document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
           }}
-          className="group flex flex-col items-center gap-3"
-        >
-          <div className="w-32 h-32 md:w-32 md:h-32 flex items-center justify-center smooth-transition">
-            <img 
-              src={downArrow} 
-              alt="Scroll Down" 
-              className="w-32 h-32 md:w-32 md:h-32 object-contain opacity-30 group-hover:opacity-100 animate-bounce smooth-transition"
-            />
-          </div>
-        </a>
+        />
       </div>
     </section>
   );

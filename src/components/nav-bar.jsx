@@ -1,5 +1,4 @@
 import { Link, useLocation } from "react-router-dom";
-import ribbon from "../assets/ribbon.png";
 
 export default function NavBar() {
   const location = useLocation();
@@ -48,7 +47,7 @@ export default function NavBar() {
           onClick={(e) => handleScroll(e, "hero")}
           className="flex items-center gap-2 md:gap-3 group"
         >
-          <img src={ribbon} alt="" className="w-5 md:w-6 h-auto transition-all duration-700 group-hover:scale-110 invert" />
+          <img src="/assets/ribbon.png" alt="" className="w-5 md:w-6 h-auto transition-all duration-700 group-hover:scale-110 invert" />
           <span className="text-base md:text-md font-sans font-bold whitespace-nowrap lowercase tracking-widest group-hover:text-white/80 smooth-transition">
             einna joy
           </span>

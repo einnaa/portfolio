@@ -13,28 +13,28 @@ const certificates = [
 		title: "Information Technology Specialist in HTML and CSS",
 		issuer: "Certiport",
 		date: "2024",
-		image: "/src/assets/ITS-HTMLandCSS.png",
+		image: "/assets/ITS-HTMLandCSS.png",
 	},
 	{
 		id: 3,
 		title: "Information Technology Specialist in Cybersecurity",
 		issuer: "Certiport",
 		date: "2025",
-		image: "/src/assets/ITS-Cybersecurity.png",
+		image: "/assets/ITS-Cybersecurity.png",
 	},
 	{
 		id: 4,
 		title: "Information Technology Specialist in Network Security",
 		issuer: "Certiport",
 		date: "2025",
-		image: "/src/assets/ITS-NetworkSecurity.png",
+		image: "/assets/ITS-NetworkSecurity.png",
 	},
     {
 		id: 5,
 		title: "Information Technology Specialist in Databases",
 		issuer: "Certiport",
 		date: "2024",
-		image: "/src/assets/ITS-Databases.png",
+		image: "/assets/ITS-Databases.png",
 	},
 ];
 

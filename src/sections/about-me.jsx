@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import aboutMeDesign from "../assets/aboutme-design.png";
 
 export default function AboutMe() {
   const skillCategories = [
@@ -45,7 +44,7 @@ export default function AboutMe() {
         <div className="flex flex-col items-center justify-center text-center max-w-3xl mx-auto">
           <div className="w-full max-w-lg mb-2 animate-fade-in">
             <img 
-              src={aboutMeDesign} 
+              src="/assets/aboutme-design.png" 
               alt="About Me Design" 
               className="w-full h-auto grayscale-20 hover:grayscale-0 smooth-transition"
             />
