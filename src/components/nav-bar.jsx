@@ -14,10 +14,8 @@ export default function NavBar() {
       const time = timestamp - start;
       const percent = Math.min(time / duration, 1);
       
-      // Easing function: easeInOutCubic
-      const ease = percent < 0.5 
-        ? 4 * percent * percent * percent 
-        : 1 - Math.pow(-2 * percent + 2, 3) / 2;
+      // Easing function: easeOutQuart (Starts fast and slows down)
+      const ease = 1 - Math.pow(1 - percent, 4);
 
       window.scrollTo(0, startY + diff * ease);
 
@@ -34,8 +32,8 @@ export default function NavBar() {
       e.preventDefault();
       const element = document.getElementById(id);
       if (element) {
-        // Set offset to 0 because we want the section padding to serve as the visual gap.
-        // If the navbar is ~80px and the section has pt-32 (128px), the remaining gap is a perfect 48px.
+        // Increased duration back to a smooth but quick 600ms.
+        // The issue was a conflict with CSS scroll-behavior: smooth in some browsers.
         const targetY = element.getBoundingClientRect().top + window.pageYOffset;
         slowScrollTo(targetY, 1200);
       }

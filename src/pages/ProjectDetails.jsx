@@ -33,7 +33,7 @@ export default function ProjectDetails() {
       <main className="max-w-8xl mx-auto px-6 pt-32 pb-24 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-20 items-start animate-fade-in transition-all duration-700">
           {/* Column 1: Image Gallery - Scrolls naturally with the page */}
-          <div className="lg:col-span-6 space-y-24 lg:pr-8">
+          <div className="order-2 lg:order-1 lg:col-span-6 space-y-12 md:space-y-24 lg:pr-8">
             {(project.images || [project.image]).map((img, idx) => (
               <div 
                 key={idx} 
@@ -49,7 +49,7 @@ export default function ProjectDetails() {
           </div>
 
           {/* Column 2: title and proj description - Sticky */}
-          <div className="lg:col-span-3 space-y-4 lg:sticky lg:top-36 h-fit">
+          <div className="order-1 lg:order-2 lg:col-span-3 space-y-4 lg:sticky lg:top-36 h-fit">
             <div>
               <div className="font-cursive text-2xl text-vintage-accent mb-4 -rotate-1 inline-block">
                 {project.category}
@@ -77,7 +77,7 @@ export default function ProjectDetails() {
           </div>
           
           {/* Column 3: overview - Sticky */}
-          <div className="lg:col-span-3 space-y-12 lg:sticky lg:top-36 h-fit">
+          <div className="order-3 lg:col-span-3 space-y-12 lg:sticky lg:top-36 h-fit">
             <div className="p-8 bg-white/40 backdrop-blur-md rounded-4xl border border-vintage-cream/10 shadow-2xl shadow-vintage-brown/5">
               <h3 className="text-lg font-serif text-vintage-brown mb-8 border-b border-vintage-brown/5 pb-4">Overview</h3>
               <div className="space-y-8">
@@ -116,7 +116,7 @@ export default function ProjectDetails() {
 
       <footer className="py-20 md:py-32 border-t border-vintage-brown/5 text-center px-6">
         <Link to="/" className="inline-block font-serif text-xl md:text-2xl text-vintage-brown/30 hover:text-vintage-brown transition-colors duration-500">
-          Einna Joy Cadagat &mdash; Portfolio Archives
+          einna joy cadagat &mdash; portfolio
         </Link>
       </footer>
     </div>

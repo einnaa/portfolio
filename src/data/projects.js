@@ -53,11 +53,12 @@ export const projects = [
     id: 4,
     title: "Amber UI Kit",
     description: "A comprehensive design system featuring warm palettes and modern components.",
-    image: "https://images.unsplash.com/photo-1517430816045-af4b5d1af9fb?q=80&w=2070&auto=format&fit=crop",
+    image:       "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2070&auto=format&fit=crop",
     images: [
-      "https://images.unsplash.com/photo-1517430816045-af4b5d1af9fb?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2070&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1581291518066-8e26871b6c48?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1517430816045-af4b5d1af9fb?q=80&w=2070&auto=format&fit=crop",
+      
     ],
     github: "#",
     tech: ["Figma", "React", "Storybook"],

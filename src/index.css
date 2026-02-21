@@ -50,16 +50,17 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    overscroll-behavior: none;
   }
 
   body {
     background-color: var(--color-vintage-bg);
     color: var(--color-vintage-brown);
     font-family: var(--font-sans);
+    overscroll-behavior: none;
   }
 
   h1, h2, h3, h4 {
