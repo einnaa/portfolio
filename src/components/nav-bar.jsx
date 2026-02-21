@@ -42,7 +42,7 @@ export default function NavBar() {
   };
 
   return (
-    <nav className="sticky top-0 left-0 w-full z-100 bg-vintage-bg/80 backdrop-blur-xl border-b border-vintage-brown/5">
+    <nav className="sticky top-0 left-0 w-full z-100 bg-vintage-bg/5 backdrop-blur-xl border-b border-vintage-brown/5">
       <div className="max-w-6xl mx-auto px-6 md:px-12 py-4 flex justify-between items-center text-vintage-brown">
         <Link to="#/" className="flex items-center gap-2 md:gap-3 group">
           <span className="text-base md:text-md font-sans font-bold text-vintage-brown whitespace-nowrap lowercase tracking-widest group-hover:text-vintage-accent smooth-transition">

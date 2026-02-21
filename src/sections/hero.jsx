@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import heroDesign from "../assets/hero-design.png";
+import downArrow from "../assets/down-arrow.png";
 
 export default function Hero() {
   return (
@@ -27,18 +28,23 @@ export default function Hero() {
         <p className="text-xs md:text-sm font-sans text-vintage-black mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
           UI/UX Design · Front-end Development · Technical Writing · Project Coordination
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
+        
+        <div className="mt-20 md:mt-20 flex justify-center">
           <a
             href="#projects"
-            className="w-full sm:w-auto px-8 py-3 bg-vintage-brown text-vintage-bg rounded-sm hover:bg-vintage-orange smooth-transition shadow-sm text-center"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="group flex flex-col items-center gap-3"
           >
-            Explore Works
-          </a>
-          <a
-            href="#contact"
-            className="w-full sm:w-auto px-8 py-3 border border-vintage-brown text-vintage-brown rounded-sm hover:bg-vintage-brown hover:text-vintage-bg smooth-transition text-center"
-          >
-            Get in Touch
+            <div className="w-30 h-30 flex items-center justify-center smooth-transition">
+              <img 
+                src={downArrow} 
+                alt="Scroll Down" 
+                className="w-32 h-32 object-contain opacity-30 group-hover:opacity-100 animate-bounce smooth-transition"
+              />
+            </div>
           </a>
         </div>
       </div>
