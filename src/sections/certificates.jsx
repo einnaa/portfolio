@@ -41,7 +41,6 @@ const certificates = [
 export default function Certificates() {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [isMobile, setIsMobile] = useState(false);
-	const [isPaused, setIsPaused] = useState(false);
 
 	useEffect(() => {
 		const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -61,18 +60,10 @@ export default function Certificates() {
 		setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
 	};
 
-	useEffect(() => {
-		if (isPaused) return;
-		const interval = setInterval(next, 5000);
-		return () => clearInterval(interval);
-	}, [isPaused, currentIndex, maxIndex]);
-
 	return (
 		<section 
 			id="certificates" 
 			className="py-24 md:py-32 px-6 bg-vintage-bg overflow-hidden scroll-mt-24"
-			onMouseEnter={() => setIsPaused(true)}
-			onMouseLeave={() => setIsPaused(false)}
 		>
 			<div className="max-w-6xl mx-auto">
 				<header className="mb-16 md:mb-24 text-center">
@@ -99,7 +90,7 @@ export default function Certificates() {
 											alt={cert.title}
 											decoding="async"
 											loading="lazy"
-											className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover/item:grayscale-0 group-hover/item:scale-105"
+											className="w-full h-full object-cover transition-all duration-1000 group-hover/item:scale-105"
 										/>
 										<div className="absolute inset-0 bg-vintage-brown/10 opacity-0 group-hover/item:opacity-100 smooth-transition pointer-events-none" />
 									</div>
