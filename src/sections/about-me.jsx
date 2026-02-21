@@ -21,7 +21,7 @@ export default function AboutMe() {
   ];
 
   return (
-    <section id="about" className="md:py-32 px-6 bg-vintage-bg relative overflow-hidden">
+    <section id="about" className="md:py-24 px-6 bg-vintage-bg relative overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
         
         {/* Skills Header Grid */}

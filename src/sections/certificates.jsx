@@ -63,7 +63,7 @@ export default function Certificates() {
 	return (
 		<section 
 			id="certificates" 
-			className="py-24 md:py-32 px-6 bg-vintage-bg overflow-hidden scroll-mt-24"
+			className="py-12 md:py-24 px-6 bg-vintage-bg overflow-hidden scroll-mt-24"
 		>
 			<div className="max-w-6xl mx-auto">
 				<header className="mb-6 md:mb-12 text-center">
@@ -133,7 +133,7 @@ export default function Certificates() {
 				</div>
 
 				{/* Indicators */}
-				<div className="flex justify-center gap-3 mt-12 md:mt-20">
+				<div className="flex justify-center gap-3 mt-2 md:mt-6">
 					{Array.from({ length: certificates.length - itemsToShow + 1 }).map((_, i) => (
 						<button
 							key={i}
