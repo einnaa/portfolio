@@ -44,7 +44,7 @@ export default function NavBar() {
 
   return (
     <nav className="sticky top-0 left-0 w-full z-50 mix-blend-difference pointer-events-none">
-      <div className="max-w-6xl mx-auto px-6 md:px-12 py-4 flex justify-between items-center text-white pointer-events-auto">
+      <div className="w-full px-6 md:px-12 py-2 flex justify-between items-center text-white pointer-events-auto">
         <Link to="/" className="flex items-center gap-2 md:gap-3 group">
           <img src={ribbon} alt="" className="w-5 md:w-6 h-auto transition-all duration-700 group-hover:scale-110 invert" />
           <span className="text-base md:text-md font-sans font-bold whitespace-nowrap lowercase tracking-widest group-hover:text-white/80 smooth-transition">
@@ -53,7 +53,7 @@ export default function NavBar() {
         </Link>
         
         <div className="flex items-center gap-4 md:gap-8">
-          <div className="hidden md:flex items-center gap-8 text-sm font-sans font-semibold tracking-widest lowercase">
+          <div className="hidden md:flex items-center gap-12 text-sm font-sans font-semibold tracking-widest lowercase">
             <a 
               href="#projects" 
               onClick={(e) => handleScroll(e, "projects")}
@@ -86,9 +86,9 @@ export default function NavBar() {
           
           <a 
             href="mailto:einnacadagat@gmail.com"
-            className="px-6 py-2 bg-white text-black font-sans font-bold rounded-3xl hover:bg-white/90 smooth-transition shadow-sm text-xs md:text-sm uppercase tracking-tighter"
+            className="px-8 py-3 bg-white text-black font-sans font-bold rounded-3xl hover:bg-white/90 smooth-transition shadow-sm text-xs md:text-sm uppercase tracking-tighter"
           >
-            Email
+            connect
           </a>
         </div>
       </div>
