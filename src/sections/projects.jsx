@@ -3,14 +3,14 @@ import { projects } from "../data/projects";
 
 export default function Projects() {
   return (
-    <section id="projects"  className="py-16 md:py-32 px-6 md:px-4 scroll-mt-20 bg-vintage-bg">
+    <section id="projects"  className="py-12 md:py-24 px-6 md:px-4 scroll-mt-20 bg-vintage-bg">
       <div className="max-w-6xl mx-auto flex flex-col">
-        <header className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-24 gap-4">
+        <header className="flex flex-col md:flex-row justify-between items-start md:items-end mb-6 md:mb-12 gap-4">
           <div>
-            <h2 className="text-3xl md:text-4xl font-cursive text-vintage-brown mb-2">what i can do...</h2>
+            <h2 className="text-md md:text-xl font-sans uppercase font-bold text-vintage-brown">what i can do</h2>
           </div>
-          <Link to="/all-projects" className="text-vintage-brown font-sans italic border-b border-vintage-brown/30 hover:border-vintage-brown smooth-transition pb-1 text-sm md:text-base">
-            All Works...
+          <Link to="/all-projects" className="text-vintage-brown font-cursive italic border-b border-vintage-brown/30 hover:border-vintage-brown smooth-transition pb-1 text-sm md:text-2xl">
+            all my works...
           </Link>
         </header>
 
