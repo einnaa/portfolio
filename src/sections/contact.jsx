@@ -15,7 +15,7 @@ export default function Contact() {
           <div className="flex flex-wrap justify-center gap-6 md:gap-8 pt-2 md:pt-4 opacity-60">
             {[
               { name: "GitHub", url: "https://github.com/einnaa" },
-              { name: "LinkedIn", url: "#" }, 
+              { name: "LinkedIn", url: "https://www.linkedin.com/in/einna-joy-01267a36a/" }, 
               { name: "Instagram", url: "https://www.instagram.com/eiaynna/" },
               { name: "Facebook", url: "https://www.facebook.com/einnn.j/" }
             ].map((social) => (

@@ -4,7 +4,7 @@ import { Github, Linkedin, Instagram, Facebook } from "lucide-react";
 export default function SocialLinks() {
   const socials = [
     { name: "github", url: "https://github.com/einnaa", icon: <Github size={18} /> },
-    { name: "linkedin", url: "#", icon: <Linkedin size={18} /> },
+    { name: "linkedin", url: "https://www.linkedin.com/in/einna-joy-01267a36a/", icon: <Linkedin size={18} /> },
     { name: "instagram", url: "https://www.instagram.com/eiaynna/", icon: <Instagram size={18} /> },
     { name: "facebook", url: "https://www.facebook.com/einnn.j/", icon: <Facebook size={18} /> },
   ];
