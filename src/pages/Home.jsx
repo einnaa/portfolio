@@ -30,37 +30,50 @@ export default function Home() {
 
     const preloadImage = (src) => {
       return new Promise((resolve) => {
+        if (!src) return resolve();
         const img = new Image();
+        
+        // Add a timeout to prevent sticking if an image fails or is slow
+        const timeout = setTimeout(() => {
+          resolve();
+        }, 3000); 
+
+        img.onload = () => {
+          clearTimeout(timeout);
+          resolve();
+        };
+        img.onerror = () => {
+          clearTimeout(timeout);
+          resolve();
+        };
         img.src = src;
-        img.onload = resolve;
-        img.onerror = resolve; // Continue even if one fails
       });
     };
 
     const loadAll = async () => {
       // Gather all project images
       const projectImages = projects.flatMap((p) => [p.image, ...(p.images || [])]);
-      const allAssets = [...new Set([...STATIC_ASSETS, ...projectImages])];
+      const allAssets = [...new Set([...STATIC_ASSETS, ...projectImages])].filter(Boolean);
       
       const totalAssets = allAssets.length;
 
       // Minimum artificial progress for smoothness
       const minProgressInterval = setInterval(() => {
         setProgress((prev) => {
-          if (prev >= 95) {
-            clearInterval(minProgressInterval);
-            return prev;
-          }
+          if (prev >= 95) return prev;
           return prev + 1;
         });
-      }, 50);
+      }, 60);
 
       // Actual asset loading
       const promises = allAssets.map(async (src) => {
         await preloadImage(src);
         loadedCount++;
-        // We don't strictly bind progress to images to avoid "jumps",
-        // but we ensure all are done before finishing.
+        
+        if (totalAssets > 0) {
+          const actualProgress = Math.floor((loadedCount / totalAssets) * 100);
+          setProgress(prev => Math.max(prev, actualProgress));
+        }
       });
 
       await Promise.all(promises);
