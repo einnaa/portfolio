@@ -36,6 +36,20 @@ const certificates = [
 		date: "2024",
 		image: "/assets/ITS-Databases.png",
 	},
+	{
+		id: 6,
+		title: "Play It Safe: Manage Security Risks",
+		issuer: "Google",
+		date: "2023",
+		image: "/assets/Google-SecurityRisks.png",
+	},
+	{
+		id: 7,
+		title: "Connect and Protect: Networks and Network Security",
+		issuer: "Google",
+		date: "2023",
+		image: "/assets/Google-NetworkSecurity.png",
+	},
 ];
 
 export default function Certificates() {
