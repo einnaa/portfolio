@@ -6,20 +6,18 @@ import Certificates from "../sections/certificates";
 import Contact from "../sections/contact";
 import NavBar from "../components/nav-bar";
 import SocialLinks from "../components/social-links";
+import { projects } from "../data/projects";
 
-// Asset list for preloading
-const ASSETS = [
-  "/src/assets/hero-design.png",
-  "/src/assets/aboutme-design.png",
-  "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1517430816045-af4b5d1af9fb?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop",
-  "/src/assets/ITS-HTMLandCSS.png",
-  "/src/assets/ITS-Cybersecurity.png",
-  "/src/assets/ITS-NetworkSecurity.png",
-  "/src/assets/ITS-Databases.png",
+// Primary static assets
+const STATIC_ASSETS = [
+  "/assets/hero-design.png",
+  "/assets/aboutme-design.png",
+  "/assets/ITS-HTMLandCSS.png",
+  "/assets/ITS-Cybersecurity.png",
+  "/assets/ITS-NetworkSecurity.png",
+  "/assets/ITS-Databases.png",
+  "/assets/ribbon.png",
+  "/assets/down-arrow.png",
 ];
 
 export default function Home() {
@@ -40,6 +38,12 @@ export default function Home() {
     };
 
     const loadAll = async () => {
+      // Gather all project images
+      const projectImages = projects.flatMap((p) => [p.image, ...(p.images || [])]);
+      const allAssets = [...new Set([...STATIC_ASSETS, ...projectImages])];
+      
+      const totalAssets = allAssets.length;
+
       // Minimum artificial progress for smoothness
       const minProgressInterval = setInterval(() => {
         setProgress((prev) => {
@@ -52,7 +56,7 @@ export default function Home() {
       }, 50);
 
       // Actual asset loading
-      const promises = ASSETS.map(async (src) => {
+      const promises = allAssets.map(async (src) => {
         await preloadImage(src);
         loadedCount++;
         // We don't strictly bind progress to images to avoid "jumps",
