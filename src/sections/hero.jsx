@@ -47,14 +47,14 @@ export default function Hero() {
       </div>
 
       <div className="max-w-4xl text-center z-10 animate-fade-in">
-        <h1 className="text-lg sm:text-lg md:text-8xl text-vintage-black font-cursive">
+        <h1 className="text-4xl sm:text-7xl md:text-8xl text-vintage-black font-cursive">
           Hi, this is Einna!
         </h1>
 
-        <p className="text-lg md:text-2xl font-sans font-bold text-vintage-black mb-1 md:mb-2 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-xs sm:text-xl md:text-2xl font-sans font-bold text-vintage-black mb-1 md:mb-2 max-w-2xl mx-auto leading-relaxed">
           I build and support user-focused digital projects.
         </p>
-        <p className="text-xs md:text-sm font-sans text-vintage-black mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-[10px] sm:text-xs md:text-sm font-sans text-vintage-black mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
           UI/UX Design · Front-end Development · Technical Writing · Project Coordination
         </p>
       </div>
