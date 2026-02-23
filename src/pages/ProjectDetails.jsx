@@ -33,19 +33,19 @@ export default function ProjectDetails() {
 
       <main className="max-w-8xl mx-auto px-6 pt-32 pb-24 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-20 items-start animate-fade-in transition-all duration-700">
-          {/* Column 1: Image Gallery - Scrolls naturally with the page */}
-          <div className="order-2 lg:order-1 lg:col-span-6 space-y-12 md:space-y-24 lg:pr-8">
+          {/* Column 1: Image Gallery */}
+          <div className="order-2 lg:order-1 lg:col-span-6 space-y-12 md:space-y-20 lg:pr-8">
             {(project.images || [project.image]).map((img, idx) => (
               <div 
                 key={idx} 
-                className="group relative aspect-video w-full rounded-[2.5rem] overflow-hidden shadow-2xl shadow-vintage-brown/10 border border-vintage-brown/5 bg-vintage-cream/10 cursor-zoom-in"
-                onMouseEnter={() => setHoveredImg(img)} // Trigger pop-up
-                onMouseLeave={() => setHoveredImg(null)} // Hide pop-up
+                className="group relative w-full h-[50vh] md:h-[80vh] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl shadow-vintage-brown/10 border border-vintage-brown/5 bg-white/5 cursor-zoom-in flex items-center justify-center p-4 md:p-8"
+                onMouseEnter={() => setHoveredImg(img)}
+                onMouseLeave={() => setHoveredImg(null)}
               >
                 <img 
                   src={img} 
                   alt={`${project.title} screenshot ${idx + 1}`} 
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+                  className="max-w-full max-h-full w-auto h-auto object-contain transition-transform duration-1000 group-hover:scale-[1.02]" 
                 />
               </div>
             ))}
@@ -120,18 +120,18 @@ export default function ProjectDetails() {
         </div>
       </main>
 
-      {/* Hover Modal Overlay */}
+      {/* Hover Modal Overlay - Updated for mixed orientations */}
       <div 
-        className={`fixed inset-0 z-[100] flex items-center justify-center bg-vintage-black/40 backdrop-blur-md pointer-events-none transition-all duration-500 ${
+        className={`fixed inset-0 z-[100] flex items-center justify-center bg-vintage-black/60 backdrop-blur-md pointer-events-none transition-all duration-500 ${
           hoveredImg ? "opacity-100" : "opacity-0 invisible"
         }`}
       >
-        <div className={`relative max-w-5xl w-[90%] transition-all duration-500 transform ${
+        <div className={`relative max-w-5xl w-[90%] max-h-[85vh] flex items-center justify-center transition-all duration-500 transform ${
           hoveredImg ? "scale-100 translate-y-0" : "scale-95 translate-y-4"
         }`}>
           <img 
             src={hoveredImg} 
-            className="w-full h-auto rounded-3xl shadow-2xl border border-white/20"
+            className="max-w-full max-h-full object-contain rounded-2xl md:rounded-3xl shadow-2xl border border-white/10"
             alt="Preview"
           />
         </div>
