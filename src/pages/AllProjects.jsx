@@ -20,7 +20,7 @@ export default function AllProjects() {
               "A comprehensive collection of various digital works, research experiments, and design explorations crafted over the years."
             </p>
           </div>
-          <div className="hidden md:block font-cursive text-4xl text-vintage-accent -rotate-6 mb-4">vol. 2022-2026</div>
+          <div className="hidden md:block font-cursive text-4xl text-vintage-accent -rotate-6 mb-4">vol. 2023-2026</div>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16 lg:gap-8 animate-fade-in">

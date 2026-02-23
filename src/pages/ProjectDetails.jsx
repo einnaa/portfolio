@@ -34,18 +34,18 @@ export default function ProjectDetails() {
       <main className="max-w-8xl mx-auto px-6 pt-32 pb-24 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-20 items-start animate-fade-in transition-all duration-700">
           {/* Column 1: Image Gallery */}
-          <div className="order-2 lg:order-1 lg:col-span-6 space-y-12 md:space-y-20 lg:pr-8">
+          <div className="order-2 lg:order-1 lg:col-span-6 space-y-8 md:space-y-12 lg:pr-8">
             {(project.images || [project.image]).map((img, idx) => (
               <div 
                 key={idx} 
-                className="group relative w-full h-[50vh] md:h-[80vh] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl shadow-vintage-brown/10 border border-vintage-brown/5 bg-white/5 cursor-zoom-in flex items-center justify-center p-4 md:p-8"
+                className="group relative w-full h-auto rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl shadow-vintage-brown/10 bg-white/5 cursor-zoom-in flex items-center justify-center"
                 onMouseEnter={() => setHoveredImg(img)}
                 onMouseLeave={() => setHoveredImg(null)}
               >
                 <img 
                   src={img} 
                   alt={`${project.title} screenshot ${idx + 1}`} 
-                  className="max-w-full max-h-full w-auto h-auto object-contain transition-transform duration-1000 group-hover:scale-[1.02]" 
+                  className="w-full h-auto max-h-[75vh] md:max-h-[85vh] object-contain transition-transform duration-1000 group-hover:scale-[1.01]" 
                 />
               </div>
             ))}
