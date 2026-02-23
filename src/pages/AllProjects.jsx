@@ -35,7 +35,7 @@ export default function AllProjects() {
                 
                 <div className="relative aspect-4/3 overflow-hidden rounded-xl mb-8 border border-vintage-brown/5 shadow-inner bg-vintage-cream/5">
                   <div 
-                    className="w-full h-full bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-110 grayscale group-hover:grayscale-0"
+                    className="w-full h-full bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-110"
                     style={{ backgroundImage: `url(${project.image})` }}
                   />
                   <div className="absolute inset-0 bg-vintage-brown/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />

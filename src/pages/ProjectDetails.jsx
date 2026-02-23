@@ -1,9 +1,10 @@
 import { useParams, Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react"; // Added useState
 import { projects } from "../data/projects";
 
 export default function ProjectDetails() {
   const { id } = useParams();
+  const [hoveredImg, setHoveredImg] = useState(null); // Track hovered image
   const project = projects.find((p) => p.id === parseInt(id));
 
   // Scroll to top when project changes
@@ -37,7 +38,9 @@ export default function ProjectDetails() {
             {(project.images || [project.image]).map((img, idx) => (
               <div 
                 key={idx} 
-                className="group relative aspect-video w-full rounded-[2.5rem] overflow-hidden shadow-2xl shadow-vintage-brown/10 border border-vintage-brown/5 bg-vintage-cream/10"
+                className="group relative aspect-video w-full rounded-[2.5rem] overflow-hidden shadow-2xl shadow-vintage-brown/10 border border-vintage-brown/5 bg-vintage-cream/10 cursor-zoom-in"
+                onMouseEnter={() => setHoveredImg(img)} // Trigger pop-up
+                onMouseLeave={() => setHoveredImg(null)} // Hide pop-up
               >
                 <img 
                   src={img} 
@@ -91,10 +94,13 @@ export default function ProjectDetails() {
                 </div>
                 <div>
                   <span className="text-[9px] tracking-[0.3em] uppercase text-vintage-brown/40 mb-2 block font-bold">Technologies</span>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {project.tech?.slice(0, 3).map((t) => (
-                      <span key={t} className="px-3 py-1 bg-vintage-brown text-vintage-bg rounded-full text-[8px] uppercase tracking-widest font-bold">
-                        {t}
+                  <div className="flex flex-wrap gap-2 md:gap-3 mb-4">
+                    {project.tech?.map((t) => (
+                      <span 
+                      key={t} 
+                      className="px-3 py-1 bg-vintage-brown text-vintage-bg rounded-full text-[8px] uppercase tracking-widest font-bold"
+                      >
+                      {t}
                       </span>
                     ))}
                   </div>
@@ -113,6 +119,23 @@ export default function ProjectDetails() {
           </div>
         </div>
       </main>
+
+      {/* Hover Modal Overlay */}
+      <div 
+        className={`fixed inset-0 z-[100] flex items-center justify-center bg-vintage-black/40 backdrop-blur-md pointer-events-none transition-all duration-500 ${
+          hoveredImg ? "opacity-100" : "opacity-0 invisible"
+        }`}
+      >
+        <div className={`relative max-w-5xl w-[90%] transition-all duration-500 transform ${
+          hoveredImg ? "scale-100 translate-y-0" : "scale-95 translate-y-4"
+        }`}>
+          <img 
+            src={hoveredImg} 
+            className="w-full h-auto rounded-3xl shadow-2xl border border-white/20"
+            alt="Preview"
+          />
+        </div>
+      </div>
 
       <footer className="py-20 md:py-32 border-t border-vintage-brown/5 text-center px-6">
         <Link to="/" className="inline-block font-serif text-xl md:text-2xl text-vintage-brown/30 hover:text-vintage-brown transition-colors duration-500">
