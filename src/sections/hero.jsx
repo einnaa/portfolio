@@ -52,10 +52,10 @@ export default function Hero() {
         </h1>
 
         <p className="text-xs sm:text-xl md:text-2xl font-sans font-bold text-vintage-black mb-1 md:mb-2 max-w-2xl mx-auto leading-relaxed">
-          I build and support user-focused digital projects.
+          I design and build user-focused digital projects.
         </p>
         <p className="text-[10px] sm:text-xs md:text-sm font-sans text-vintage-black mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
-          UI/UX Design · Front-end Development · Technical Writing · Project Coordination
+          UI/UX Design · Front-End Development · Project Management · Technical Writing
         </p>
       </div>
 

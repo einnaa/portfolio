@@ -51,15 +51,16 @@ export default function AboutMe() {
           </div>
 
           <div className="space-y-4 animate-fade-in">
-            <div className="mb-8">
+            <div className="mb-2">
               <h2 className="text-3xl md:text-4xl font-cursive text-vintage-brown italic mb-1">about me</h2>
               <h4 className="text-lg md:text-xl font-sans font-bold text-vintage-brown uppercase tracking-widest">einna joy cadagat</h4>
             </div>
 
-            <div className="space-y-6 text-vintage-brown font-sans text-xs md:text-sm leading-relaxed max-w-2xl mx-auto tracking-tight">
+            <div className="space-y-6 text-vintage-brown font-sans text-sm md:text-md leading-relaxed max-w-6xl mx-auto tracking-tight">
               <p>
-                hi! i'm einna, currently a BSIT student with a passion for involving myself in tech ideas. <br />
-                my love for art evolved into creating tech design. my understanding and years of experience reading hundreds of novels curated into writing about tech.
+                Hi, I’m Einna — a BSIT student with a strong passion for building meaningful tech solutions and turning ideas into functional, well-designed digital experiences.
+                My background in art shaped my eye for detail and design, which naturally evolved into creating user-centered interfaces, while years of immersing myself in novels strengthened my creativity, critical thinking, and communication skills.
+                I combine logic and creativity to develop systems that are not only efficient but also thoughtfully crafted and engaging.
               </p>
             </div>
           </div>
