@@ -37,10 +37,10 @@ export const projects = [
     id: 3,
     title: "Portfolio Website",
     description: "A personal portfolio website showcasing design and development projects, built with React JS and styled with Tailwind CSS.",
-    image: "/projects/portfolio/portfolio1.png",
+    image: "/projects/portfolio/portfolio2.png",
     images: [
-      "/projects/portfolio/portfolio1.png",
       "/projects/portfolio/portfolio2.png",
+      "/projects/portfolio/portfolio1.png",
       "/projects/portfolio/portfolio3.png",
       "/projects/portfolio/portfolio4.png",
       "/projects/portfolio/portfolio5.png",
