@@ -23,7 +23,7 @@ export default function Projects() {
               <div className="bg-transparent group-hover:bg-white/40 backdrop-blur-none group-hover:backdrop-blur-md p-5 md:p-6 rounded-4xl shadow-none group-hover:shadow-xl group-hover:shadow-vintage-brown/5 border border-transparent h-full flex flex-col grain-overlay overflow-hidden transition-all duration-500">
                 <Link to={`/projects/${project.id}`} className="relative aspect-3/2 overflow-hidden rounded-xl mb-6 border border-vintage-brown/5 block">
                   <div 
-                    className="w-full h-full bg-cover bg-center transition-all duration-1000 group-hover:scale-110"
+                    className="w-full h-full bg-cover border border-vintage-brown/20 rounded-xl bg-center transition-all duration-1000 group-hover:scale-110"
                     style={{ backgroundImage: `url(${project.image})` }}
                   />
                   <div className="absolute inset-0 bg-vintage-brown/10 opacity-0 group-hover:opacity-100 smooth-transition" />
@@ -40,7 +40,7 @@ export default function Projects() {
                   </Link>
                 </div>
                 
-                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-vintage-accent/10">
+                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-vintage-brown/20">
                   {project.tech?.map((t) => (
                     <span key={t} className="px-3 py-1 bg-vintage-brown/5 text-vintage-brown/40 rounded-full text-[9px] uppercase tracking-widest font-bold border border-vintage-brown/10 group-hover:bg-vintage-accent/10 group-hover:text-vintage-brown/80 transition-colors duration-300">
                       {t}
@@ -61,7 +61,7 @@ export default function Projects() {
               <div className="bg-transparent group-hover:bg-white/40 backdrop-blur-none group-hover:backdrop-blur-md p-5 md:p-8 rounded-4xl shadow-none group-hover:shadow-xl group-hover:shadow-vintage-brown/5 border border-transparent h-full flex flex-col grain-overlay overflow-hidden transition-all duration-500">
                 <Link to={`/projects/${project.id}`} className="relative aspect-video overflow-hidden rounded-xl mb-6 border border-vintage-brown/5 block">
                   <div 
-                    className="w-full h-full bg-cover bg-center transition-all duration-1000 group-hover:scale-105"
+                    className="w-full h-full bg-cover bg-center border border-vintage-brown/20 rounded-xl transition-all duration-1000 group-hover:scale-105"
                     style={{ backgroundImage: `url(${project.image})` }}
                   />
                   <div className="absolute inset-0 bg-vintage-brown/10 opacity-0 group-hover:opacity-100 smooth-transition" />
@@ -78,7 +78,7 @@ export default function Projects() {
                   </Link>
                 </div>
                 
-                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-vintage-accent/10">
+                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-vintage-brown/20">
                   {project.tech?.map((t) => (
                     <span key={t} className="px-3 py-1 bg-vintage-brown/5 text-vintage-brown/40 rounded-full text-[9px] uppercase tracking-widest font-bold border border-vintage-brown/10 group-hover:bg-vintage-accent/10 group-hover:text-vintage-brown/80 transition-colors duration-300">
                       {t}
