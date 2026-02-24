@@ -38,7 +38,7 @@ export default function ProjectDetails() {
             {(project.images || [project.image]).map((img, idx) => (
               <div 
                 key={idx} 
-                className="group relative w-full h-auto rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl shadow-vintage-brown/10 bg-white/5 cursor-zoom-in flex items-center justify-center"
+                className="group relative w-full h-auto rounded-4xl md:rounded-[2.5rem] overflow-hidden shadow-2xl shadow-vintage-brown/10 bg-white/5 cursor-zoom-in flex items-center justify-center"
                 onMouseEnter={() => setHoveredImg(img)}
                 onMouseLeave={() => setHoveredImg(null)}
               >
@@ -122,7 +122,7 @@ export default function ProjectDetails() {
 
       {/* Hover Modal Overlay - Updated for mixed orientations */}
       <div 
-        className={`fixed inset-0 z-[100] flex items-center justify-center bg-vintage-black/60 backdrop-blur-md pointer-events-none transition-all duration-500 ${
+        className={`fixed inset-0 z-100 flex items-center justify-center bg-vintage-black/60 backdrop-blur-md pointer-events-none transition-all duration-500 ${
           hoveredImg ? "opacity-100" : "opacity-0 invisible"
         }`}
       >
